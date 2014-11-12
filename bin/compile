@@ -18,6 +18,10 @@ cp "$bp_dir/bin/nginx" "$1/bin/"
 chmod +x "$1/bin/nginx"
 echo '-----> Installed NGINX 1.4.1 to app/bin'
 
+mkdir -p "$1/config"
+cp "$bp_dir/config/mime.types" "$1/config"
+echo '-----> Copied mime.types'
+
 # Output npm debug info on error
 trap cat_npm_debug_log ERR
 
