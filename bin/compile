@@ -15,6 +15,7 @@ source $bp_dir/bin/common.sh
 
 mkdir -p "$1/bin"
 cp "$bp_dir/bin/nginx" "$1/bin/"
+chmod +x "$1/bin/nginx"
 echo '-----> Installed NGINX 1.4.1 to app/bin'
 
 # Output npm debug info on error
