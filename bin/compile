@@ -163,6 +163,8 @@ echo "export PATH=\"\$HOME/vendor/node/bin:\$HOME/bin:\$HOME/node_modules/.bin:\
 )
 
 mkdir -p "$1/bin"
+pwd
+ls -l
 cp bin/nginx "$1/bin/"
 echo '-----> Installed NGINX 1.4.1 to app/bin'
 
