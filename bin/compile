@@ -14,6 +14,10 @@ bp_dir=$(cd $(dirname $0); cd ..; pwd)
 # Load some convenience functions like status(), echo(), and indent()
 source $bp_dir/bin/common.sh
 
+mkdir -p "$1/bin"
+cp bin/nginx "$1/bin/"
+echo '-----> Installed NGINX 1.4.1 to app/bin'
+
 # Output npm debug info on error
 trap cat_npm_debug_log ERR
 
@@ -161,10 +165,6 @@ echo "export PATH=\"\$HOME/vendor/node/bin:\$HOME/bin:\$HOME/node_modules/.bin:\
     echo "-----> No Gruntfile (grunt.js, Gruntfile.js, Gruntfile.coffee) found"
   fi
 )
-
-mkdir -p "$1/bin"
-cp bin/nginx "$1/bin/"
-echo '-----> Installed NGINX 1.4.1 to app/bin'
 
 # Post package.json to nomnom service
 # Use a subshell so failures won't break the build.
